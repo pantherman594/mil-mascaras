@@ -14,7 +14,7 @@ class SoundNameTableViewCell: UITableViewCell {
     var soundNumber: Int!
     var sound: String! {
         didSet {
-            soundNameLabel.text = "\(soundNumber!).wav"
+            soundNameLabel.text = "\(soundNumber!).mp3"
             soundMessageLabel.text = sound
         }
     }
