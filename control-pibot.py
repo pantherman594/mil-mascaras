@@ -49,19 +49,19 @@ rightSpeed = 1.0 + RIGHT_TRIM
 slowTurnBy = 0.5
 
 # setup startup sound. Make sure you have a sounds
-# folder with a sound named startup.wav
+# folder with a sound named startup.mp3
 fileLocation = "/home/pi/sounds/"
 pygame.mixer.init()
-pygame.mixer.music.load(fileLocation + "startup.wav")
+pygame.mixer.music.load(fileLocation + "startup.mp3")
 speakerVolume = ".50" # initially sets speaker at 50%
 pygame.mixer.music.set_volume(float(speakerVolume))
 pygame.mixer.music.play()
 
 sounds = []
 for i in range(12):
-    sounds.append(pygame.mixer.Sound('/home/pi/sounds/' + str(i) + '.wav'))
+    sounds.append(pygame.mixer.Sound('/home/pi/sounds/' + str(i) + '.mp3'))
 
-#zero_sound = pygame.mixer.Sound('/home/pi/sounds/0.wav')
+#zero_sound = pygame.mixer.Sound('/home/pi/sounds/0.mp3')
 #zero_sound.play()
 
 def connectionStatus(client, userdata, flags, rc):
@@ -103,11 +103,11 @@ def messageDecoder(client, userdata, msg):
         speakerVolume = message[4:]
         pygame.mixer.music.set_volume(float(speakerVolume))
     else:
-        print("Playing sound at: " + fileLocation + message + ".wav")
+        print("Playing sound at: " + fileLocation + message + ".mp3")
 #        sounds[int(message)].set_volume(float(speakerVolume))
 #        sounds[int(message)].play()
         pygame.mixer.music.stop()
-        pygame.mixer.music.load(fileLocation + message + ".wav") # assumes you have a file$
+        pygame.mixer.music.load(fileLocation + message + ".mp3") # assumes you have a file$
         pygame.mixer.music.play()
 
 # Set up calling functions to mqttClient
