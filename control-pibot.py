@@ -57,13 +57,6 @@ speakerVolume = ".50" # initially sets speaker at 50%
 pygame.mixer.music.set_volume(float(speakerVolume))
 pygame.mixer.music.play()
 
-sounds = []
-for i in range(12):
-    sounds.append(pygame.mixer.Sound('/home/pi/sounds/' + str(i) + '.mp3'))
-
-#zero_sound = pygame.mixer.Sound('/home/pi/sounds/0.mp3')
-#zero_sound.play()
-
 def connectionStatus(client, userdata, flags, rc):
     global didPrintSubscribeMessage
     if not didPrintSubscribeMessage:
@@ -104,8 +97,6 @@ def messageDecoder(client, userdata, msg):
         pygame.mixer.music.set_volume(float(speakerVolume))
     else:
         print("Playing sound at: " + fileLocation + message + ".mp3")
-#        sounds[int(message)].set_volume(float(speakerVolume))
-#        sounds[int(message)].play()
         pygame.mixer.music.stop()
         pygame.mixer.music.load(fileLocation + message + ".mp3") # assumes you have a file$
         pygame.mixer.music.play()
@@ -118,4 +109,3 @@ mqttClient.on_message = messageDecoder
 # CTRL-C will stop the program from running.
 mqttClient.connect(serverAddress)
 mqttClient.loop_forever()
-
