@@ -210,7 +210,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlt-lg-MrQ">
                                 <rect key="frame" x="16" y="124" width="358" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">This app supports the Mil Mascaras sound-playing, Raspberry-Pi Zero WH-based robot. This robot was created as a STEM tutorial by Prof. John Gallaugher, and you can build it following the step-by-step tutorial and video playlist at:
+                                <mutableString key="text">This app supports the Mil Mascaras sound-playing, Raspberry-based robot. This robot was created as a STEM tutorial by Prof. John Gallaugher, and you can build it following the step-by-step tutorial and video playlist at:
 https://gallaugher.com/mil-mascaras
 
 If you've built the robot according to the tutorial, and the Raspberry Pi's hostname is mil-mascaras, and this device is connected the same Wi-Fi network as your robot, then just power on the robot's two batteries, wait for the robot's "Ready to Roll" sound, then click the "Connect to Robot" button.
@@ -231,9 +231,9 @@ Now Go Make Something Awesome!
    -- Prof. G.
 
 P.S. Why is it called "Mil Mascaras"? This is the name of a famous Mexican Wrestler (luchador), known as the man of a thousand masks. A fitting name and fine tribute given this project was initially started during COVID quarantine to help encourage mask use. This mask has no official connection to either Mil Mascaras or Lucha Libre.
-</string>
+</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About This App:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTR-yq-cmU">
