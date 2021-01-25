@@ -39,7 +39,7 @@ didPrintSubscribeMessage = False
 # until the bot moves roughly straight. The #s below reflect the bot I'm working with.
 # It's probably best to start both trim values at 0 and adjust from there.
 # out of 1.0 full power.
-LEFT_TRIM   = -0.01
+LEFT_TRIM   = 0.0
 RIGHT_TRIM  = 0.0
 
 leftSpeed = 1.0 + LEFT_TRIM
@@ -69,8 +69,8 @@ def messageDecoder(client, userdata, msg):
     message = msg.payload.decode(encoding='UTF-8')
 
     if message == "forward":
-        kit.motor1.throttle = leftSpeed
-        kit.motor2.throttle = rightSpeed
+        kit.motor1.throttle = rightSpeed
+        kit.motor2.throttle = leftSpeed
         print("^^^ moving forward! ^^^")
         print(leftSpeed,rightSpeed)
     elif message == "stop":
@@ -78,18 +78,18 @@ def messageDecoder(client, userdata, msg):
         kit.motor2.throttle = 0.0
         print("!!! stopping!")
     elif message == "backward":
-        kit.motor1.throttle = -leftSpeed
-        kit.motor2.throttle = -rightSpeed
+        kit.motor1.throttle = -rightSpeed
+        kit.motor2.throttle = -leftSpeed
         print("\/ backward \/")
         print(-leftSpeed,-rightSpeed)
     elif message == "left":
-        kit.motor1.throttle = -leftSpeed * slowTurnBy
-        kit.motor2.throttle = rightSpeed * slowTurnBy
+        kit.motor1.throttle = rightSpeed * slowTurnBy
+        kit.motor2.throttle = -leftSpeed * slowTurnBy
         print("<- left")
         print(-leftSpeed * slowTurnBy,rightSpeed * slowTurnBy)
     elif message == "right":
-        kit.motor1.throttle = leftSpeed * slowTurnBy
-        kit.motor2.throttle = -rightSpeed * slowTurnBy
+        kit.motor1.throttle = -rightSpeed * slowTurnBy
+        kit.motor2.throttle = leftSpeed * slowTurnBy
         print("-> right")
         print(leftSpeed * slowTurnBy,-rightSpeed * slowTurnBy)
     elif message.startswith("Vol="):
