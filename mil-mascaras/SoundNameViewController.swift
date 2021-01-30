@@ -17,6 +17,11 @@ class SoundNameViewController: UIViewController {
         soundNameTextView.text = soundName
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        self.oneButtonAlert(title: "Modifying Sound Names", message: "If you add, delete, or move a sound, you'll also need to modify the files in the 'sounds' folder on your Raspberry Pi. See tutorial at: https://gallaugher.com/mil-mascaras for details on how to do this.")
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         soundName = soundNameTextView.text
     }

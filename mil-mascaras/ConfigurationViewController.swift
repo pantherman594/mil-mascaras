@@ -28,6 +28,11 @@ class ConfigurationViewController: UIViewController {
         hostNameTextField.text = hostAndSounds.hostName
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.oneButtonAlert(title: "Changing the Hostname or Files", message: "If you change the Hostname or add, delete, or move sound files, then you'll also need to modify the control-pibot.py file on your Raspberry Pi. See tutorial at: https://gallaugher.com/mil-mascaras for details on how to do this.")
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         passedBackHostsAndSounds?(hostAndSounds)

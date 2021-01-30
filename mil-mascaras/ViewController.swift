@@ -26,9 +26,10 @@ class ViewController: UIViewController {
                          "Don't you look great in your mask. Nice job!",
                          "Look at you rockin' the mask. Nice work!",
                          "You look so good in that mask. Thanks for helping!",
-                         "Dude. What's wrong with you_ The mask goes over your nose",
-                         "Hey - COVID bro! It's time to mask up!",
-                         "Yo - plague princess - can you wear a mask_ Take one if you need one"]
+                         "Dude. What's wrong with you_ The mask goes over your nose"]
+// To add the phrases below, remove the ] above, add a comma to the end of that line, then uncomment the lines below.
+//                         ,"Hey - COVID bro! It's time to mask up!",
+//                         "Yo - plague princess - can you wear a mask_ Take one if you need one"]
     
     var direction: [Int: String] = [0: "forward",
                                     1: "backward",
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
                 self.navigationItem.title = self.hostAndSounds.hostName
                 self.tableView.reloadData()
                 self.mqttClient = CocoaMQTT(clientID: "PiBotApp", host: "\(self.hostAndSounds.hostName).local", port: 1883)
-                self.mqttClient.connect()
+                _ = self.mqttClient.connect()
             }
         }
     }

@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlt-lg-MrQ">
-                                <rect key="frame" x="16" y="124" width="358" height="702"/>
+                                <rect key="frame" x="16" y="124" width="358" height="472"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <mutableString key="text">This app supports the Mil Mascaras sound-playing, Raspberry-based robot. This robot was created as a STEM tutorial by Prof. John Gallaugher, and you can build it following the step-by-step tutorial and video playlist at:
 https://gallaugher.com/mil-mascaras
@@ -221,7 +221,9 @@ Pressing one of the sounds in the scrolling list will play that sound.
 
 If you've changed your robot's Raspberry Pi hostname, then click the cog wheel in the upper-right corner of the main screen to change the hostname, then return to the app's main screen and "Connect to Robot".
 
-If you add your own sounds and want to update the names or number of sounds in the sound list, you can also change this under the cog wheel.
+If you change the hostname in this app, you will have to modify a corresponding line in the control-pibot.py file on your robot. See the tutorial document for details.
+
+If you add, delete, or move sounds in this app, make sure you've also made similar changes to your robot's "sounds" folder. See online documentation on how to do this.
 
 For more fun maker projects, and to learn how to build iOS apps, visit Prof. Gallaugher's YouTube Channel at:
 https://YouTube.com/profgallaugher
@@ -246,16 +248,57 @@ P.S. Why is it called "Mil Mascaras"? This is the name of a famous Mexican Wrest
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-Tx-Xsi">
+                                <rect key="frame" x="16" y="604" width="358" height="190"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo + robot" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-7u-hXe">
+                                        <rect key="frame" x="8" y="16" width="79" height="158"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gRm-7u-hXe" secondAttribute="height" multiplier="1:2" id="qib-uV-wfb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mil Mascaras" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iLZ-2b-IkC">
+                                        <rect key="frame" x="95" y="16.000000000000004" width="255" height="49.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VIE-oc-gzV">
+                                        <rect key="frame" x="95" y="67" width="255" height="107"/>
+                                        <string key="text">An app supporting a build-your-own Raspberry Pi robot. by Prof. John Gallaugher Guide &amp; Info at: https://gallaugher.com/mil-mascaras Twitter: @gallaugher - YouTube.com/profgallaugher</string>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="iLZ-2b-IkC" firstAttribute="top" secondItem="0aU-Tx-Xsi" secondAttribute="top" constant="16" id="6Cf-YY-14m"/>
+                                    <constraint firstAttribute="trailing" secondItem="VIE-oc-gzV" secondAttribute="trailing" constant="8" id="8vo-ig-aM0"/>
+                                    <constraint firstItem="iLZ-2b-IkC" firstAttribute="leading" secondItem="gRm-7u-hXe" secondAttribute="trailing" constant="8" symbolic="YES" id="Dtw-Cy-s3e"/>
+                                    <constraint firstItem="gRm-7u-hXe" firstAttribute="top" secondItem="0aU-Tx-Xsi" secondAttribute="top" constant="16" id="XfD-by-yUj"/>
+                                    <constraint firstItem="gRm-7u-hXe" firstAttribute="leading" secondItem="0aU-Tx-Xsi" secondAttribute="leading" constant="8" id="YVi-Tx-aCp"/>
+                                    <constraint firstItem="VIE-oc-gzV" firstAttribute="leading" secondItem="gRm-7u-hXe" secondAttribute="trailing" constant="8" symbolic="YES" id="adc-fX-zzz"/>
+                                    <constraint firstAttribute="bottom" secondItem="gRm-7u-hXe" secondAttribute="bottom" constant="16" id="bhW-Pw-EIJ"/>
+                                    <constraint firstItem="VIE-oc-gzV" firstAttribute="top" secondItem="iLZ-2b-IkC" secondAttribute="bottom" constant="1.6699999999999999" id="jGJ-BC-RnB"/>
+                                    <constraint firstAttribute="bottom" secondItem="VIE-oc-gzV" secondAttribute="bottom" constant="16" id="jVk-W5-UfG"/>
+                                    <constraint firstAttribute="height" constant="190" id="ndm-Sq-yh2"/>
+                                    <constraint firstAttribute="trailing" secondItem="iLZ-2b-IkC" secondAttribute="trailing" constant="8" id="rpi-d2-jTp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Apz-Eb-O51"/>
                         <color key="backgroundColor" red="0.80808311700000002" green="0.74089771510000002" blue="0.92158436779999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="wlt-lg-MrQ" firstAttribute="bottom" secondItem="Apz-Eb-O51" secondAttribute="bottom" constant="16" id="4D2-1W-RGS"/>
+                            <constraint firstItem="0aU-Tx-Xsi" firstAttribute="leading" secondItem="Apz-Eb-O51" secondAttribute="leading" constant="16" id="0lO-5S-tva"/>
                             <constraint firstItem="Apz-Eb-O51" firstAttribute="trailing" secondItem="cTR-yq-cmU" secondAttribute="trailing" constant="16" id="7kl-vR-Sre"/>
+                            <constraint firstItem="Apz-Eb-O51" firstAttribute="trailing" secondItem="0aU-Tx-Xsi" secondAttribute="trailing" constant="16" id="OuW-5y-9zQ"/>
                             <constraint firstItem="Apz-Eb-O51" firstAttribute="trailing" secondItem="wlt-lg-MrQ" secondAttribute="trailing" constant="16" id="P0D-O0-bbL"/>
                             <constraint firstItem="wlt-lg-MrQ" firstAttribute="top" secondItem="cTR-yq-cmU" secondAttribute="bottom" id="TZi-G7-SGh"/>
                             <constraint firstItem="cTR-yq-cmU" firstAttribute="leading" secondItem="Apz-Eb-O51" secondAttribute="leading" constant="16" id="Y8H-eh-nSn"/>
                             <constraint firstItem="wlt-lg-MrQ" firstAttribute="leading" secondItem="Apz-Eb-O51" secondAttribute="leading" constant="16" id="Ydm-N6-VUm"/>
+                            <constraint firstItem="Apz-Eb-O51" firstAttribute="bottom" secondItem="0aU-Tx-Xsi" secondAttribute="bottom" constant="16" id="Zf6-wu-2k6"/>
+                            <constraint firstItem="0aU-Tx-Xsi" firstAttribute="top" secondItem="wlt-lg-MrQ" secondAttribute="bottom" constant="8" symbolic="YES" id="kBL-vw-fwH"/>
                             <constraint firstItem="cTR-yq-cmU" firstAttribute="top" secondItem="Apz-Eb-O51" secondAttribute="top" constant="12" id="kl4-WV-zk8"/>
                         </constraints>
                     </view>
@@ -508,7 +551,7 @@ P.S. Why is it called "Mil Mascaras"? This is the name of a famous Mexican Wrest
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-iT-JMK">
-                                <rect key="frame" x="23" y="108" width="130.33333333333334" height="24"/>
+                                <rect key="frame" x="23" y="108" width="130.66666666666666" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="g3Z-PX-asv"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="ota-03-B7O"/>
@@ -620,6 +663,7 @@ P.S. Why is it called "Mil Mascaras"? This is the name of a famous Mexican Wrest
         <image name="down" width="73" height="72"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="left" width="73" height="72"/>
+        <image name="logo + robot" width="638" height="1304"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="right" width="73" height="72"/>

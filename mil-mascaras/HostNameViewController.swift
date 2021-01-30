@@ -17,6 +17,11 @@ class HostNameViewController: UIViewController {
         hostNameTextField.text = hostName
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        self.oneButtonAlert(title: "Changing the Robot's Hostname", message: "If you change the Hostname, you'll also need to modify the control-pibot.py file on your Raspberry Pi. See tutorial at: https://gallaugher.com/mil-mascaras for details on how to do this.")
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         hostName = hostNameTextField.text
     }
