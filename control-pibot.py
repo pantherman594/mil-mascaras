@@ -18,7 +18,10 @@ import pygame
 import time
 import paho.mqtt.client as mqtt
 from adafruit_motorkit import MotorKit
+# if you're using an Adafruit Crickit hat, uncomment the line below and comment out the statement above:
+# from adafruit_crickit import crickit
 # NOTE: The line below is needed if you're using the Waveshare Motor Driver Hat
+# comment out this line if you're using a Crickit
 kit = MotorKit(0x40)
 # Also, only if using the Waveshare Motor Driver Hat, be sure you've installed
 # and modified CircuitPython files, in particular the file at:
@@ -26,10 +29,15 @@ kit = MotorKit(0x40)
 # as described in the tutorial at:
 # https://gallaugher.com/mil-mascaras
 
+# uncomment lines below if you're using a Crickit
+# then replace any reference to kit.motor1 with motor_1 and kit.motor2 with motor_2
+# motor_1 = crickit.dc_motor_1
+# motor_2 = crickit.dc_motor_2
+
 clientName = "PiBot"
 # *** IMPORTANT ***
 # This is your pi's host name. If your name is something different than
-# mil-mascaras, then be sure to change it, here
+# mil-mascaras, then be sure to change it, here - make it the name of your Pi
 serverAddress = "mil-mascaras"
 mqttClient = mqtt.Client(clientName)
 # Flag to indicate subscribe confirmation hasn't been printed yet.
